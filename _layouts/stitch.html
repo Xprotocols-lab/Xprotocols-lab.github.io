@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<article class="stitch">
+<div class="stitch-content">
+    <div class="wrapper-stitch">
+        <!-- Title and Logo Section -->
+        <div class="title-logo">
+            <h1 class="stitch-title">{{ page.title }}</h1> <!-- Title from Markdown -->
+        </div>
+
+        <!-- Two Column Layout (Authors and Content) -->
+        <div class="two-column-layout">
+            <div class="column authors">
+                <!-- Conference Information -->
+                <div class="conference-info">
+                    <p><strong>Published at:</strong> 63rd ACM/IEEE Design Automation Conference (DAC '26), Long Beach, CA</p>
+                </div>
+
+                <h2>Authors</h2>
+                <ul>
+                    <li>Melisande Zonta-Roudes &mdash; ETH Zurich</li>
+                    <li>Nora Hinderling &mdash; ETH Zurich</li>
+                    <li>Shweta Shinde &mdash; ETH Zurich</li>
+                </ul>
+
+                <div class="links">
+                <div class="rectangle-container">
+                    <a href="https://github.com/Xprotocols-lab/STITCH">
+                        <span class="rectangle github-rect">
+                            {% include icon-github.svg %}
+                        </span>
+                    </a>
+                    <a href="{{ '/assets/stitch_dac26.pdf' | relative_url }}">
+                        <span class="rectangle pdf-rect">
+                            {% include icon-paper.svg %}
+                        </span>
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="column content">
+                {% if page.content_type == "abstract" %}
+                {{ content }} <!-- Abstract and other Markdown content -->
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</article>

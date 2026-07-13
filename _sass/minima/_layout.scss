@@ -1,0 +1,549 @@
+:root {
+    --primary-color: #2c3e50; /* Common color for header and footer */
+    --secondary-color: #1abc9c; /* Common color for hover effects */
+    --tertiary-color: #34495e; /* Complementary color for additional elements */
+    --font-color:   #ece1de; 
+}
+/**
+ * Site header
+ */
+.site-header {
+  //border-top: 5px solid $grey-color-dark;
+ border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 1.865;
+
+  // Positioning context for the mobile navigation icon
+  position: sticky;
+  width:100%; 
+  top: 0; 
+  left : 0; 
+  background-color: var(-- primary-color);
+  z-index : 1000; 
+
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+  color :  #ece1de;
+
+  /*&,
+  &:visited {
+    color: $grey-color-dark;
+  }*/
+}
+
+.site-nav {
+  float: right;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+  .nav-trigger {
+      display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color:  #ece1de;
+    line-height: $base-line-height;
+    font-size: 1.3em; 
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    position: absolute;
+    top: 9px;
+    right: $spacing-unit / 2;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    border-radius: 5px;
+    text-align: right;
+
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg {
+        fill: $grey-color-dark;
+      }
+    }
+
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+      margin-left: 20px;
+    }
+  }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+  background-color: var(--primary-color)
+}
+
+.footer-heading {
+  @include relative-font-size(1.125);
+  margin-bottom: $spacing-unit / 2;
+  color: var(--font-color)
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-col-wrapper {
+  @include relative-font-size(0.9375);
+  color: $grey-color;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($on-palm) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1;
+}
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+}
+
+.expect-blog-container{
+   max-width: 80%;
+  margin-left: 10%; 
+  margin-right: 10%;
+  justify-content: center;
+  align-items: center;
+
+}
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(2);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.75);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.625);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.375);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.125);
+    }
+  }
+}
+
+// EXPECT POST 
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
+    .authors {
+        border-right: none !important; /* Remove border in stacked layout */
+        //width: 80%; 
+    }
+
+    /* Responsive Rectangle Layout */
+    .rectangle-container {
+        flex-direction: column; /* Stack rectangles on smaller screens */
+        gap: 1em;
+    }
+
+    .pics {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .home-logos{
+    background-color: $background-color !important;
+
+  }
+  .home-pic{
+   border : 0.1em solid $grey-color-light !important;
+   max-width: 50% !important; 
+ }
+}
+
+/* Rectangle Links */
+.rectangle-container {
+    display: flex;
+    margin: 2em 0.5em; /* Add space from the content */
+    gap: 2em;
+    flex-wrap: wrap;
+    border-top: 1px solid #cccccc; 
+    //border-bottom: 1px solid #cccccc; 
+}
+
+.rectangle {
+    flex: 1;
+    //width: 100%; 
+    //height: 100%; 
+    padding: 10px 20px;
+    margin: 0.5em 0; 
+    //text-align: center;
+    border-radius: 0.1em;
+    //font-size: 1.2em;
+    //font-weight: bold;
+    //width: 64px; 
+    //height: 64px; 
+    //background-color: #aaaaaa;
+    text-decoration: none;
+    transition: transform 0.3s ease; 
+    display:inline-block;
+}
+
+.rectangle:hover {
+    transform: translate(0px, 5px); /* Subtle hover effect */
+    //background-color: #aaaaaa; 
+}
+
+/* Rectangle Colors */
+.github-rect svg {
+    //background-color: #000000;
+    width: 2.5em; 
+    height: auto; 
+}
+
+.pdf-rect {
+    //background-color: #000000;
+}
+
+.pdf-rect svg {
+  width: 2.5em; 
+  height: auto; 
+    //background-color: #000000;
+}
+
+.cite-rect {
+   //width: 32px; 
+   //height: 24px; 
+   //background-color: #000000; /* Third complementary color */
+
+}
+.cite-rect svg {
+ width: 2.5em; 
+ height: auto; 
+
+}
+
+/* Two Column Layout */
+.two-column-layout {
+    display: flex;
+    gap: 5%; /* Adjust the gap between the columns */
+    margin-top: 1%; /* Space between the title and the columns */
+    width: 100%; 
+}
+
+/* Column Styling */
+.column {
+    flex: 1; /* Make columns take up equal width */
+    padding: 2%; /* Add padding inside the columns */
+}
+
+/* Author Column Styling */
+.authors {
+    border-right: 1px solid #ccc; /* Optional border to divide the columns */
+    //max-width: 30%; /* Adjust author column width */
+    //margin-top: 2%; 
+  }
+
+/* Content Column Styling */
+.content {
+    flex-grow: 2; /* Ensure content takes up more space if needed */
+}
+
+.title-logo {
+  display: flex; 
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1%; 
+}
+.title-logo .logo{
+  max-width: 80px; 
+  height: auto; 
+}
+
+.expect-content{
+  width: 100%; 
+}
+.wrapper-expect{
+  max-width:90%
+}
+
+.xray-content{
+  width: 100%; 
+}
+.wrapper-xray{
+  max-width:90%
+}
+
+.pics{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.pic{
+  display:flex; 
+  height: 25% ;
+  width: 25%; 
+  //background-color: #aaaaaa;
+  justify-content:center;
+  align-items: center; 
+  margin: 5% 2%;
+  flex-direction: column; 
+}
+.pic img{
+ max-width: 60%; 
+ height: auto;
+ margin: 0.5em 0;  
+}
+.pic figcaption{
+  text-align: center;
+  margin: 0.5em 0.5em; 
+}
+
+
+// POP UP
+/* Add this CSS either inline or in your main stylesheet */
+.modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        position: relative; // for position of close button
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+ // HOME PAGE
+.home {
+  text-align: center;
+}
+
+
+
+.home-logos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f6f4ec; 
+  border-radius: 3%;
+  height: auto; 
+
+}
+
+.home-pic {
+ max-width: 20%; 
+ height: auto;
+ margin: 1em 4em;
+ padding: 2em 2em; 
+ background-color: #fffbf2;
+ border-radius: 5%;
+ border: 0.1em solid $background-color;
+
+ }
+
+ .home-pic img{
+  max-width: 80%; 
+ }
+
+.home-pic:hover {
+    transform: translate(0px, 5px); /* Subtle hover effect */
+    transition: transform 0.3s ease;
+    background-color: $background-color;
+    text-decoration: none; 
+}
+.home-pic figcaption{
+  margin-top: 0.5em; 
+  font-size: 120%;
+  font-weight: bold;
+  color: $grey-color-dark;
+}
+.home-pic figdescription{
+  margin-top: 0.3em; 
+  flex-wrap: flex;
+  overflow-wrap: break-word;
+  //font-weight: bold;
+  //margin: 
+  color: black;//$grey-color-dark;
+}
+
+.home title{
+color: red; 
+}
+
+
+
