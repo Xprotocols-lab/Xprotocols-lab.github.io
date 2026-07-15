@@ -49,3 +49,12 @@ $on-laptop:        80% !default;
   "minima/layout",
   "minima/syntax-highlighting"
 ;
+.stitch-content{
+  width: 100%;
+}
+.wrapper-stitch{
+  max-width: 90%;
+}
+.stitch-title{
+  @include relative-font-size(1.75);
+}
