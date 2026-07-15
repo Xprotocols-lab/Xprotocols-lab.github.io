@@ -545,5 +545,13 @@
 color: red; 
 }
 
-
+.stitch-content{
+  width: 100%;
+}
+.wrapper-stitch{
+  max-width: 90%;
+}
+.stitch-title{
+  @include relative-font-size(1.75);
+}
 
