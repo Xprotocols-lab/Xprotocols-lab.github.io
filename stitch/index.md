@@ -17,11 +17,11 @@ Verification flows use Verification IPs to identify assertion violations in on-c
     <figcaption><strong>Stitch</strong><br>Automated patching of on-chip protocol implementations</figcaption>
   </figure>
   <figure class="pic">
-    <img src="{{ '/assets/implementation_logo.png' | relative_url }}" alt="Implementations">
+    <img src="{{ '/assets/icon-implementations-checklist.png' | relative_url }}" alt="Implementations">
     <figcaption>Patched 11 implementations across 5 protocols</figcaption>
   </figure>
   <figure class="pic">
-    <img src="{{ '/assets/implementation_logo.png' | relative_url }}" alt="Dataset">
+    <img src="{{ '/assets/icon-dataset-database.png' | relative_url }}" alt="Dataset">
     <figcaption>Dataset of 100 violations of on-chip communication protocols</figcaption>
   </figure>
 </div>
