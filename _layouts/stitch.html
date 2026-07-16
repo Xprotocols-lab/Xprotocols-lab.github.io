@@ -5,8 +5,12 @@ layout: default
 <div class="stitch-content">
     <div class="wrapper-stitch">
         <!-- Title and Logo Section -->
-        <div class="title-logo">
+        <!-- <div class="title-logo">
             <h1 class="stitch-title">{{ page.title }}</h1> <!-- Title from Markdown -->
+        </div> -->
+        <div class="title-logo">
+            <img src="{{ '/assets/Stitch_logo.png' | relative_url }}" alt="Stitch logo" class="stitch-logo">
+            <h1 class="stitch-title">{{ page.title }}</h1>
         </div>
 
         <!-- Two Column Layout (Authors and Content) -->
